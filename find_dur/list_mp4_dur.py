@@ -48,13 +48,14 @@ for root, dirs, files in os.walk(path):
             mp4_file_path = os.path.join(root, file)
             write_text(mp4_file_path + 1*"\n")
             # Create an object by passing the location as a string
-            video = moviepy.editor.VideoFileClip(mp4_file_path)ow 
+            video = moviepy.editor.VideoFileClip(mp4_file_path)
 
             # Contains the duration of the video in terms of seconds
             video_duration = int(video.duration)
 
             hours, mins, secs = convert(video_duration)
-            write_text(hours + ":" + mins + ":" +   secs + ":"  + 2*"\n")
+            vid_dur = "Vedio Duration = " +str(hours) + ":" + str(mins) + ":" +   str(secs) + "\n"
+            write_text( vid_dur + 2*"\n")
     write_text( 30*" - " + 5*"\n")
 
 
