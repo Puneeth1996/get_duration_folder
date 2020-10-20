@@ -19,7 +19,7 @@ today = date.today()
 d4 = today.strftime("%b-%d-%Y")
 
 
-write_text( str(d4) + 5*"\n" + 10*" - " )
+write_text( str(d4) + 5*"\n" + 30*" - " + 2*"\n" )
 
 
 path         = r'C:\Users\punee\Desktop\ielts_studies\Vocabulary\Udemy - Everyday English Brush Up On Your English Grammar'
@@ -31,7 +31,7 @@ for root, dirs, files in os.walk(path):
     for file in files:
         if file.endswith(".{}" .format(extention) ):
             write_text(os.path.join(root, file) + 2*"\n")
-    write_text( 10*" - " + 5*"\n")
+    write_text( 30*" - " + 5*"\n")
 
 
 
