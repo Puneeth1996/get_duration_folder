@@ -4,6 +4,16 @@ import moviepy.editor
 
 
 
+today = date.today()
+# Month abbreviation, day and year	
+d4 = today.strftime("%b-%d-%Y")
+
+
+
+path         = r'C:\Users\punee\Desktop\ielts_studies\Vocabulary\Udemy - Everyday English Brush Up On Your English Grammar'
+extention    = 'mp4'
+out_text     = 'Udemy - Everyday English Brush Up On Your English Grammar.txt'
+
 
 # Converts into more readable format
 def convert(seconds):
@@ -19,7 +29,7 @@ def convert(seconds):
 
 
 def write_text(msg):
-    filename = 'Log.txt'
+    filename = out_text
     if os.path.exists(filename):
         append_write = 'a' # append if already exists
     else:
@@ -29,16 +39,8 @@ def write_text(msg):
     textFile.close()
 
 
-today = date.today()
-# Month abbreviation, day and year	
-d4 = today.strftime("%b-%d-%Y")
-
 
 write_text( str(d4) + 5*"\n" + 30*" - " + 2*"\n" )
-
-
-path         = r'C:\Users\punee\Desktop\ielts_studies\Vocabulary\Udemy - Everyday English Brush Up On Your English Grammar'
-extention    = 'mp4'
 
 
 for root, dirs, files in os.walk(path):
@@ -46,7 +48,7 @@ for root, dirs, files in os.walk(path):
     for file in files:
         if file.endswith(".{}" .format(extention) ):
             mp4_file_path = os.path.join(root, file)
-            write_text(mp4_file_path + 1*"\n")
+            write_text(file + 1*"\n")
             # Create an object by passing the location as a string
             video = moviepy.editor.VideoFileClip(mp4_file_path)
 
