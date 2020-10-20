@@ -56,7 +56,7 @@ for root, dirs, files in os.walk(path):
             video_duration = int(video.duration)
 
             hours, mins, secs = convert(video_duration)
-            vid_dur = "Vedio Duration = " +str(hours) + ":" + str(mins) + ":" +   str(secs) + "\n"
+            vid_dur = "Vedio Duration = " +str(hours) + "hrs:" + str(mins) + "mins:" +   str(secs) + "secs\n"
             write_text( vid_dur + 2*"\n")
     write_text( 30*" - " + 5*"\n")
 
